@@ -2,7 +2,7 @@ using System;
 
 namespace Quickmaths {
 
-public struct mat3 {
+public struct mat3 : IFormattable {
 
     public static readonly mat3 IDENTITY = mat3(
         1, 0, 0,
