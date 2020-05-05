@@ -146,7 +146,7 @@ public struct mat4 : IFormattable {
             for (int minorColumn = 0; minorColumn < 4; minorColumn++ ) {
 
                 // Find all the components not in the current row or column
-                float[] components = new float[9];
+                float[9] components = (float[9]) mat3.IDENTITY;
                 int componentsIndex = 0;
             
                 for (int detRow = 0; detRow < 4; detRow++ ) {

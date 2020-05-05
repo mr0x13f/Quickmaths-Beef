@@ -103,7 +103,7 @@ public struct mat3 : IFormattable {
             for (int minorColumn = 0; minorColumn < 3; minorColumn++ ) {
 
                 // Find all the components not in the current row or column
-                float[] components = new float[4];
+                float[4] components = (float[4]) mat2.IDENTITY;
                 int componentsIndex = 0;
             
                 for (int detRow = 0; detRow < 3; detRow++ ) {
@@ -132,13 +132,13 @@ public struct mat3 : IFormattable {
         // + - +
         // - + -
         // + - +
-        float[,] cofactors = new float[3,3];
+        float[3][3] cofactors = (float[3][3]) mat3.IDENTITY;
 
         for (int cofactorsRow = 0; cofactorsRow < 3; cofactorsRow++ ) {
             for (int cofactorsColumn = 0; cofactorsColumn < 3; cofactorsColumn++ ) {
                 bool isEven = (cofactorsRow + cofactorsColumn) % 2f == 0;
                 float scalar = isEven ? 1f : -1f;
-                cofactors[cofactorsRow,cofactorsColumn] = minors[cofactorsRow][cofactorsColumn] * scalar;
+                cofactors[cofactorsRow][cofactorsColumn] = minors[cofactorsRow][cofactorsColumn] * scalar;
             }
 		}
 
