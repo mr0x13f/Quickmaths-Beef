@@ -1,4 +1,4 @@
-# QuickmathsBeef
+# Quickmaths-Beef
 A port of my C# vector library to Beef. 
 
 ## Quickmaths-CSharp
